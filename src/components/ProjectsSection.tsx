@@ -8,47 +8,101 @@ interface ProjectData {
   category: string;
   name: string;
   liveUrl: string;
-  col1Image1: string;
-  col1Image2: string;
-  col2Image: string;
+  image: string;
+  overview: string;
+  details: string[];
 }
 
 const PROJECTS: ProjectData[] = [
-    {
-        number: '01',
-        category: 'Personal',
-        name: 'Forge',
-        liveUrl: 'https://forge-pink-seven.vercel.app/',
-        col1Image1: '/Forge.png',
-        col1Image2: '/Forge1.png',
-        col2Image: '/Forge2.png',
-      },
   {
-      number: '02',
-      category: 'Personal',
-      name: 'LawLab',
-      liveUrl: 'https://lawlab-self.vercel.app',
-      col1Image1: '/lawlab.png',
-      col1Image2: '/lawlab1.png',
-      col2Image: '/lawlab2.png',
-    },
+    number: '01',
+    category: 'SaaS · Compliance',
+    name: 'CSync',
+    liveUrl: 'https://csync.co/',
+    image: '/csync-home.png',
+    overview:
+      'A compliance management platform for Company Secretaries that simplifies recurring legal and regulatory operations.',
+    details: [
+      'Automates statutory filings and recurring compliance timelines to reduce manual follow-ups.',
+      'Centralizes company documents with structured storage and faster retrieval for audit readiness.',
+      'Supports workflow-based task tracking so teams can assign, review, and complete compliance actions.',
+      'Improves visibility across due dates, pending obligations, and filing progress for stakeholders.',
+    ],
+  },
+  {
+    number: '02',
+    category: 'Corporate · Web',
+    name: 'Intellosoft Infotech',
+    liveUrl: 'https://www.intellosoft.io/',
+    image: '/intellosoft-home.png',
+    overview:
+      'A corporate website and digital presence platform designed to communicate services clearly and drive inbound leads.',
+    details: [
+      'Presents services, expertise, and company messaging with a clean conversion-focused structure.',
+      'Optimized responsive experience across desktop, tablet, and mobile for consistent brand perception.',
+      'Improves user flow from discovery to contact actions with clear information hierarchy and CTAs.',
+      'Acts as a scalable foundation for long-term marketing, SEO visibility, and client trust building.',
+    ],
+  },
   {
     number: '03',
-    category: 'Personal · GenAI',
-    name: 'ResumeIQ',
-    liveUrl: 'https://resumeiq-harsh.vercel.app/',
-    col1Image1: '/resumeiq-hero.png',
-    col1Image2: '/resumeiq-feedback.png',
-    col2Image: '/resumeiq-score.png',
+    category: 'AI · LLM',
+    name: 'Febi AI',
+    liveUrl: 'https://febi.ai/',
+    image: '/febi-home.png',
+    overview:
+      'An AI assistant platform powered by LLMs to automate customer communication and internal business workflows.',
+    details: [
+      'Handles customer queries instantly with context-aware AI responses for faster support operations.',
+      'Automates repetitive conversation paths to reduce manual load on customer-facing teams.',
+      'Integrates with business processes to streamline tasks, improve response consistency, and save time.',
+      'Enables teams to scale support quality without proportionally increasing human intervention.',
+    ],
   },
   {
     number: '04',
-    category: 'Personal · Design',
-    name: 'Notch',
-    liveUrl: 'https://notch-zeta.vercel.app/',
-    col1Image1: '/notch-hero.png',
-    col1Image2: '/notch-pricing.png',
-    col2Image: '/notch-mockup.png',
+    category: 'AI · Chatbot',
+    name: 'Machine Avatars',
+    liveUrl: 'https://machineavatars.com/',
+    image: '/machineavatars-home.png',
+    overview:
+      'An AI chatbot solution embedded into websites to engage visitors continuously and capture business opportunities.',
+    details: [
+      'Provides 24/7 visitor engagement and instant responses without requiring live agent availability.',
+      'Automates conversation flows for FAQs, qualification, and early-stage discovery.',
+      'Captures and qualifies leads directly from chat interactions to support sales pipelines.',
+      'Improves conversion potential by combining support, engagement, and lead generation in one layer.',
+    ],
+  },
+  {
+    number: '05',
+    category: 'Business · Platform',
+    name: 'DTPS Tech',
+    liveUrl: 'https://dtps.tech/',
+    image: '/dtps-home.png',
+    overview:
+      'A technology platform focused on customer engagement, business growth, and intuitive digital experiences.',
+    details: [
+      'Builds user-centric product journeys that improve interaction quality and retention.',
+      'Supports business growth goals through high-clarity interfaces and strong usability.',
+      'Balances modern UI with practical product flows for faster user adoption.',
+      'Enables organizations to present digital capabilities in a scalable and accessible way.',
+    ],
+  },
+  {
+    number: '06',
+    category: 'HRTech · Recruitment',
+    name: 'Talio',
+    liveUrl: 'https://www.talio.in/',
+    image: '/talio-home.png',
+    overview:
+      'A recruitment and talent management platform that streamlines hiring operations from job posting to pipeline management.',
+    details: [
+      'Manages job postings, candidate applications, and hiring workflows in a unified system.',
+      'Improves recruiter efficiency through organized candidate tracking and status movement.',
+      'Supports end-to-end hiring coordination for teams across sourcing, screening, and selection.',
+      'Helps organizations build structured talent pipelines for ongoing workforce planning.',
+    ],
   },
 ];
 
@@ -114,45 +168,30 @@ const ProjectCard = ({ project, index, total, containerRef }: ProjectCardProps) 
                     </div>
                   </div>
 
-        {/* Bottom row: two-column image grid */}
-        <div className="grid grid-cols-[40%_60%] gap-3 sm:gap-4 md:gap-5 flex-1 min-h-0">
-          {/* Left column - 2 stacked */}
-          <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 min-h-0">
-            <div
-              className="overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(130px, 16vw, 230px)' }}
-            >
-              <img
-                src={project.col1Image1}
-                alt={`${project.name} preview 1`}
-                className="h-full w-full object-cover"
-                loading="lazy"
-                draggable={false}
-              />
-            </div>
-            <div
-              className="overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(160px, 22vw, 340px)' }}
-            >
-              <img
-                src={project.col1Image2}
-                alt={`${project.name} preview 2`}
-                className="h-full w-full object-cover"
-                loading="lazy"
-                draggable={false}
-              />
-            </div>
-          </div>
-
-          {/* Right column - 1 tall */}
-          <div className="overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px] min-h-0">
+        {/* One image + detailed content */}
+        <div className="grid grid-cols-1 md:grid-cols-[46%_54%] gap-4 sm:gap-5 md:gap-6 flex-1 min-h-0">
+          <div className="overflow-hidden rounded-[30px] sm:rounded-[36px] md:rounded-[42px] border border-[#D7E2EA]/20 min-h-[200px] md:min-h-0">
             <img
-              src={project.col2Image}
-              alt={`${project.name} preview 3`}
-              className="h-full w-full object-cover"
+              src={project.image}
+              alt={`${project.name} homepage screenshot`}
+              className="h-full w-full object-cover object-top"
               loading="lazy"
               draggable={false}
             />
+          </div>
+
+          <div className="min-h-0 rounded-[30px] sm:rounded-[36px] md:rounded-[42px] border border-[#D7E2EA]/20 bg-[#121212] p-4 sm:p-6 md:p-7 overflow-y-auto">
+            <p className="text-sm sm:text-base md:text-lg leading-relaxed text-[#D7E2EA]/90">
+              {project.overview}
+            </p>
+            <ul className="mt-4 sm:mt-5 space-y-2.5 sm:space-y-3 text-xs sm:text-sm md:text-base text-[#D7E2EA]/80 leading-relaxed">
+              {project.details.map((item) => (
+                <li key={item} className="flex items-start gap-2.5">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#D7E2EA]/70 shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </motion.article>
