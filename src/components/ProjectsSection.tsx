@@ -86,6 +86,7 @@ const PROJECTS: ProjectData[] = [
       'Builds user-centric product journeys that improve interaction quality and retention.',
       'Supports business growth goals through high-clarity interfaces and strong usability.',
       'Balances modern UI with practical product flows for faster user adoption.',
+      'Includes Flutter-powered components for polished, cross-platform mobile experiences.',
       'Enables organizations to present digital capabilities in a scalable and accessible way.',
     ],
   },

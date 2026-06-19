@@ -100,7 +100,7 @@ const AboutSection = () => {
                         {[
                           {
                             label: 'Languages & Library',
-                            items: ['HTML', 'CSS', 'JavaScript', 'React JS', 'Next JS', 'TypeScript', 'GraphQL', 'Python', 'React Native'],
+                            items: ['HTML', 'CSS', 'JavaScript', 'React JS', 'Next JS', 'TypeScript', 'GraphQL', 'Python', 'React Native', 'Flutter'],
                           },
                           {
                             label: 'Database & Frameworks',
